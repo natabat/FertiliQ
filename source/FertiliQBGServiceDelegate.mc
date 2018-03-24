@@ -17,6 +17,9 @@ class FertiliQBGServiceDelegate extends Sys.ServiceDelegate {
 		
 		var minHR = -1;
 		var minTemp = -1;
+		
+		var hrSum = 0;
+		var hrCount = 0;
 	    if (Toybox has :SensorHistory) {
 	    	if (SensorHistory has :getHeartRateHistory) {
 		        minHR = SensorHistory.getHeartRateHistory({:period => fourHours}).getMin();

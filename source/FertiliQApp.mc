@@ -37,7 +37,7 @@ class FertiliQApp extends App.AppBase {
     function onBackgroundData(data) {
     	Sys.println("onBackgroundData: " + data);
     	bgData = data;
-    	App.getApp().setProperty(OS_DATA, data);
+    	App.Storage.setValue(OS_DATA, data);
     	Ui.requestUpdate();
     }
 

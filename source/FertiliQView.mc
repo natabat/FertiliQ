@@ -16,11 +16,10 @@ class FertiliQView extends Ui.View {
 	
     function initialize() {
         View.initialize();
-        
-        var temp = App.getApp().getProperty(OS_DATA);
-        if (temp != null) {
-        	bgData = temp;
-        }
+
+	    var temp = App.Storage.getValue(OS_DATA);
+        Sys.println(temp);
+        bgData = temp;
     }
 
     // Load your resources here
@@ -47,15 +46,28 @@ class FertiliQView extends Ui.View {
         dc.clear();
         dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT);
         
-        var hr = "N/A";
-        var temp = "N/A";
+        var hr = 0;
+        var temp = 0;
         
         if (bgData != null) {
 	        hr = bgData["hr"];
 	        temp = bgData["temp"];
         }
-        
-        dc.drawText(width/2, height/2, Gfx.FONT_SMALL, Lang.format("$1$: $2$\n$3$: $4$", [hrLabel, hr, tempLabel, temp.format("%.2f")]), just);
+       
+		var print = "";
+		if (hr == 0 && temp == 0) {
+			print = "No data";
+		}
+		if (hr != 0) {
+			print += Lang.format("$1$: $2$", [hrLabel, hr]);
+			if (temp != 0) {
+				print += "\n";
+			}
+		}       
+		if (temp != 0) {
+			print += Lang.format("$1$: $2$", [tempLabel, temp.format("%.2f")]);
+		}
+        dc.drawText(width/2, height/2, Gfx.FONT_SMALL, print, just);
     }
 
     // Called when this View is removed from the screen. Save the
