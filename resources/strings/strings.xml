@@ -2,4 +2,9 @@
     <string id="AppName">FertiliQ</string>
     <string id="hrLabel">HR</string>
     <string id="tempLabel">Temp</string>
+    
+    <string id="mainMenuTitle">Log</string>
+    <string id="menstruationMenu">Menstruation</string>
+    <string id="ovulationMenu">Ovulation</string>
+    <string id="inseminationMenu">Insemination</string>
 </strings>

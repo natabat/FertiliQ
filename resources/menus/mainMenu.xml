@@ -1,0 +1,5 @@
+<menu id="MainMenu" title="@Strings.mainMenuTitle">
+    <menu-item id="logMenstruation">@Strings.menstruationMenu</menu-item>
+    <menu-item id="logOvulation">@Strings.ovulationMenu</menu-item>
+    <menu-item id="logInsemination">@Strings.inseminationMenu</menu-item>
+</menu>

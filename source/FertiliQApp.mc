@@ -30,7 +30,7 @@ class FertiliQApp extends App.AppBase {
 
     // Return the initial view of your application here
     function getInitialView() {
-        return [ new FertiliQView() ];
+        return [ new FertiliQView(), new FertiliQDelegate() ];
     }
     
     // handle background data
